@@ -1,28 +1,28 @@
-# <p align="center">🏦 Python: Credit Risk and Anomaly Detection 🔎<p/>
+# <p align="center">Python: Credit Risk and Anomaly Detection<p/>
 <br>**Nattawut Boonnoon**<br/>
-💼 LinkedIn: www.linkedin.com/in/nattawut-bn
-<br>📧 Email: nattawut.boonnoon@hotmail.com<br/>
-📱 Phone: (+66) 92 271 6680
+- LinkedIn: www.linkedin.com/in/nattawut-bn
+- Email: nattawut.boonnoon@hotmail.com
+- Phone: (+66) 92 271 6680
 
-***📋 Overview***
+***Overview***
 -
 My Personal project is exploring machine learning solution for assessing credit risk, tackling two major challenges faced by banks:
-1. Credit Risk Scoring = Predicts whether a loan applicant is likely to default, achieving ~60-70% accuracy.
+1. Credit Risk Scoring = Predicts whether a loan applicant is likely to default, achieving 70-80% accuracy.
 2. Fraud Detection = Identifies suspicious applications using anomaly detection techniques.
 
 **Why It Matters:**
 Banks lose billions every year due to loan defaults and fraudulent applications. This system acts as an automated first layer of defense, helping loan officers quickly spot high-risk applicants and focus their attention where it matters most.
 
-***⭐ System Architecture***
+***System Architecture***
 -
-**💳 Modules:**
+**Modules:**
 
 1. Dual-Model Architecture: Random Forest for risk scoring + Isolation Forest for fraud detection
 2. Interactive Dashboard: Explore results through Plotly visualizations (no coding required)
 3. Audit Trail: Full logging for compliance and debugging
 4. Fair Lending Compliant: Uses only financial factors (no demographic data)
 
-**💸 Business Impact:**
+**Business Impact:**
 
 1. Reduces manual review time by 40% through automated low-risk approvals
 2. Catches anomalies that traditional rule-based systems miss
@@ -49,7 +49,7 @@ graph TD
 `````
 
 
-***🪧 Dashboard***
+***Dashboard***
 -
 What you'll see:
 - Risk score distribution across loan amounts
@@ -60,7 +60,7 @@ What you'll see:
 ![Live Dashboard](Nattawut_CR_Dashboard.png)
 
 
-***📝 Feature Example***
+***Feature Example***
 -
 `````PYTHON
 # AUTO CHART: What causes loan defaults?
@@ -95,7 +95,7 @@ plt.close()
 print("PICTURE SAVED! Check: credit_risk_outputs/TOP_PREDICTORS.png")
 `````
 
-# <p align="center">👩🏻‍💻 How To Run  ⚙️<p/>
+# <p align="center">How To Run<p/>
 
 **Technology Stack:**
 | Component | Framework | Objective |
@@ -129,8 +129,8 @@ pip install -r requirements.txt
 python Nattawut_CR_Script.py
 `````
 
-# <p align="center">📚 Key Findings & Insights 💡<p/>
-**📊 Sample Result**
+# <p align="center">Key Findings and Insights<p/>
+**Sample Result**
 
 | Metric | Credit Risk Model | Fruad Detection |
 | :---------- | :-----------: | -----------: |
@@ -140,25 +140,25 @@ python Nattawut_CR_Script.py
 | F1-Score | 0.71 | 0.74 |
 
 `````bash
-✅ Data loaded: 5,000 loan applications
-✅ Models trained successfully
-✅ Dashboard saved: outputs/dashboard_20250102.html
-✅ Summary saved: outputs/summary_reports.txt
+- Data loaded: 5,000 loan applications
+- Models trained successfully
+- Dashboard saved: outputs/dashboard_20250102.html
+- Summary saved: outputs/summary_reports.txt
 
-📊 Model Performance:
+Model Performance:
    - Credit Risk Accuracy: 78.3%
    - Fraud Detection Rate: 12.4%
    - False Positive Rate: 5.1%
 `````
 
-🎯 What I Learned Building This So Far:
+What I Learned Building This So Far:
 
 - Class Imbalance is Real: Only 5% of loans default, so the model needs special handling (SMOTE, class weights) to avoid predicting "approve" for everyone.
 - Feature Engineering > Fancy Algorithms: Adding debt_to_income_ratio improved accuracy more than switching from Random Forest to XGBoost.
 - Fraud Detection is Hard: Isolation Forest flags ~12% of applications, but ~5% are false positives. Human review is still necessary.
 - Logging Saves Lives: When debugging why a specific applicant was flagged, the audit log was invaluable.
 
-✅ What Works Well Right Now: 
+What Works Well Right Now: 
 
 - Debt-to-income ratio is the strongest predictor of default risk
 - Credit history length matters: accounts <2 years show 40% higher risk
@@ -166,13 +166,13 @@ python Nattawut_CR_Script.py
 - Feature engineering improved accuracy more than algorithm complexity
 - Self-employed applicants are available separately from the general metrics.
 
-🔮 Future Improvement : 
+Future Improvement: 
 
 - False positives create friction: 5% = 50 flagged customers per 1,000 applications
 - Accuracy changes to ~65% for loans >$100K due to smaller sample size
 - Real-time scoring not yet implemented (batch processing only)
 
-📁 Important Notices:
+Important Notices:
 
 - My 78.3% accuracy for real-world data is solid, but production systems need ~85%-90% for automation.
 - This model serves as a triage system (flagging cases for human review), not a fully replacement for underwriters
